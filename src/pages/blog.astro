@@ -1,7 +1,9 @@
 ---
+import { getCollection } from "astro:content";
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BlogPost from '../components/BlogPost.astro';
-const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
+
+const allPosts = await getCollection("blog");
 const pageTitle = "My Astro Learning page";
 ---
 
@@ -11,6 +13,8 @@ const pageTitle = "My Astro Learning page";
   <p>La laine mérinos est une fibre naturelle provenant de la toison des moutons mérinos. Elle est réputée pour sa douceur, sa légèreté et ses propriétés thermorégulatrices, ce qui en fait un choix populaire pour les vêtements et les accessoires.</p>
 
   <ul>
-        {allPosts.map((post: any) => <BlogPost title={post.frontmatter.title} url={post.url} />)}
+        {allPosts.map((post: any) => 
+          <BlogPost url={`/posts/${post.id}/`} title={post.data.title} />
+        )}
   </ul>
 </BaseLayout>
