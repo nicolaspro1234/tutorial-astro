@@ -56,6 +56,8 @@ h1 {
   display: unset;
 }
 
+.mb-large { margin-bottom: 2rem; }
+
 @media screen and (min-width: 636px) {
   .nav-links {
     margin-left: 5em;

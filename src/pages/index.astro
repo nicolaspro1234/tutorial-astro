@@ -1,9 +1,20 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Greeting from '../components/Greeting';
-const pageTitle = "Home Page";
+const pageTitle = "LaineMerinos.com";
 ---
 <BaseLayout pageTitle={pageTitle}>
-   <h2>My awesome blog subtitle</h2>
-  <Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
+   <h2>Le site référence de la laine Mérinos</h2>
+   <div class="mb-large">
+   <Greeting client:load messages={["Bienvenue", "Hello", "Bêêêêh"]} />
+   </div>
+  
+   Pourquoi j'adore ce textile:
+  <ul>
+  <li><b>Respirant</b> : évapore la sueur en gardant une sensation d'habit sec.</li>
+  <li><b>Thermorégulateur</b> : régule la température corporelle. Frais en été, chaud en hiver.</li>
+  <li><b>Antibactérien</b> : combat les bactéries et prévient les odeurs (!)</li>
+  <li><b>Léger et résistant</b> : offre un confort optimal tout en étant durable</li>
+  <li><b>Durable</b> : la laine mérinos est une fibre naturelle de qualité supérieure.</li>
+</ul>
 </BaseLayout>
